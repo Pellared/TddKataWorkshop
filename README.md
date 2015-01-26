@@ -9,3 +9,4 @@ Repository dedicated for training in Łodź that will take place on 03.02.2015
 ## Using Git with Visual Studio
 - http://blogs.msdn.com/b/visualstudioalm/archive/2013/01/30/getting-started-with-git-in-visual-studio-and-team-foundation-service.aspx
 - https://msdn.microsoft.com/pl-pl/library/hh850437.aspx
+- http://stackoverflow.com/questions/24919907/visual-studio-2013-git-only-master-branch-listed
