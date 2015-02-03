@@ -22,6 +22,12 @@ namespace Game
             Assert.Equal(20, result);
         }
 
-      
+        [Fact]
+        public void check_result_with_one_spare_bonus()
+        {
+            var game = new Game();
+            int result = game.Result(new List<int>() { 1, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 });
+            Assert.Equal(29, result);
+        }
     }
 }
