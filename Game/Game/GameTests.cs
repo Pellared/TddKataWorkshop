@@ -11,5 +11,11 @@ namespace Game
             int result = game.Add(2, 3);
             Assert.Equal(5, result);
         }
+
+        [Fact]
+        public void CheckThrow()
+        {
+                 
+        }
     }
 }
