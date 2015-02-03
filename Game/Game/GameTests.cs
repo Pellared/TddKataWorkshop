@@ -2,10 +2,8 @@
 
 namespace Game
 {
-
     public class GameTests
     {
-
         [Theory]
         [InlineDataAttribute(1, "I")]
         [InlineDataAttribute(5, "V")]
@@ -19,6 +17,14 @@ namespace Game
             var game = new Game();
             string result = game.ConvertToRomanNumber(input);
             Assert.Equal(result, output);
+        }
+
+        [Fact]
+        public void Should_Convert_Numbers_From_0_To_10()
+        {
+            var game = new Game();
+            string result = game.ConvertToRomanNumber(6);
+            Assert.Equal(result, "VI");
         }
     }
 }
