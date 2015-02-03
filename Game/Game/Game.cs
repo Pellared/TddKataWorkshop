@@ -60,12 +60,26 @@ namespace Game
                 }
             }
         }
+
+        public int Result2(List<Frame> frames)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 
     public class Frame
     {
         private string firstRoll;
         private string secondRoll;
+        private int p1;
+        private int p2;
+
+        public Frame(int p1, int p2)
+        {
+            // TODO: Complete member initialization
+            this.p1 = p1;
+            this.p2 = p2;
+        }
 
     }
 }

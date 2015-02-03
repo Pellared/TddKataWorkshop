@@ -38,7 +38,13 @@ namespace Game
             Assert.Equal(150, result);
         }
 
-      
+        [Fact]
+        public void check_result_with_frame()
+        {
+            var game = new Game();
+            int result = game.Result2(new List<Frame>() {  new Frame(1,1), new Frame(1,3) });
+            Assert.Equal(6, result);
+        }
 
 
     }
