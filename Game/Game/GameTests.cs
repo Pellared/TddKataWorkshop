@@ -29,5 +29,17 @@ namespace Game
             int result = game.Result(new List<int>() { 1, 9, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 });
             Assert.Equal(29, result);
         }
+        
+        [Fact]
+        public void check_result_with_all_spare_bonus()
+        {
+            var game = new Game();
+            int result = game.Result(new List<int>() { 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 });
+            Assert.Equal(150, result);
+        }
+
+      
+
+
     }
 }
