@@ -34,11 +34,18 @@ namespace Game
             Assert.Equal(result, "XVIII");
         }
         [Fact]
+        public void Convert400ToRomanNumber()
+        {
+            var game = new Game();
+            string result = game.ConvertToRomanNumber(400);
+            Assert.Equal(result, "CD");
+        }
+        [Fact]
         public void Convert494ToRomanNumber()
         {
             var game = new Game();
-            string result = game.ConvertToRomanNumber(18);
-            Assert.Equal(result, "CD");
+            string result = game.ConvertToRomanNumber(494);
+            Assert.Equal(result, "CDXCIV");
         }
     }
 }

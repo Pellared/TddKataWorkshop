@@ -32,7 +32,7 @@ namespace Game
             }
             else
             {
-                result = _numberConvertions[divider] + _numberConvertions[dividers.ToList().IndexOf(divider) - 1];
+                result = _numberConvertions[divider] + _numberConvertions[dividers.ElementAt( dividers.ToList().IndexOf(divider) - 1)];
             }
 
             if (input % divider > 0)
