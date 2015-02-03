@@ -6,18 +6,35 @@ namespace Game
     public class GameTests
     {
         [Fact]
-        public void Add_values_returns_the_sum()
+        public void Throw_is_a_strike()
         {
             var game = new Game();
-            int result = game.Add(2, 3);
-            Assert.Equal(5, result);
+            game.Throws = new[] { 10, 0, 0 };
+            Assert.Equal(game.IsStrike(), true);
         }
 
         [Fact]
-        public void Throw_is_a_strike()
+        public void TestSpare()
         {
-            var _throw = new Throw();
-            Assert.Equal(_throw.Scores, new int[] {10,0,0});
+            var game = new Game();
+            game.Throws = new[] { 4, 6, 0 };
+            Assert.Equal(game.IsSpare(), true);
+        }
+
+        [Fact]
+        public void TestIsExtraThrow()
+        {
+            var game = new Game();
+            game.Throws = new[] { 6, 4, 0 };
+            Assert.Equal(game.IsExtraThrow(), true);
+        }
+
+        [Fact]
+        public void TestScore()
+        {
+            var game = new Game();
+            game.Throws = new[] { 6, 4, 5 };
+            Assert.Equal(game.Score(), 15);
         }
 
     }
