@@ -13,16 +13,9 @@ namespace Game
         public int Result(List<Frame> frames)
         {
             int result = 0;
-
-            var framesArray = frames.ToArray();
-            for (int i = 0; i < framesArray .Length ; i++)
+            for (int i = 0; i < frames.Count; i++)
             {
-                var bonus = 0;
-                if (i > 0 && framesArray[i - 1].isSpare())
-                {
-                    bonus = framesArray[i].firstPool;
-                }
-                result += framesArray[i].sum() + bonus;
+                result += ((i > 0 && frames[i - 1].isSpare())) ? frames[i].sum() + frames[i].firstPool : frames[i].sum();
             }
             return result;
 
