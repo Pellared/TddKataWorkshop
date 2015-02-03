@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace Game
@@ -48,6 +49,76 @@ namespace Game
               var secondStrikeScore = 10 + 4 + 5;
               var thirdFrameScore = 4+5;
             Assert.Equal(firstStrikeScore + secondStrikeScore + thirdFrameScore , result);
+        }
+
+        [Fact]
+        public void AcceptanceWithMix()
+        {
+            var game = new Game();
+
+            var input = new List<Frame>()
+            {
+                new Frame(0, 10),
+                new Frame(1, 9),
+                new Frame(2, 3),
+                new Frame(10, 0),
+                new Frame(2, 3),
+                new Frame(2, 3),
+                new Frame(2, 3),
+                new Frame(2, 3),
+                new Frame(2, 8),
+                new Frame(10, 0),
+                new Frame(5, 5)
+            };
+
+            var expected = new[]
+            {
+                10 + 1,
+                1 + 9 + 2,
+                2 + 3,
+                10 + 2 + 3,
+                2 + 3,
+                2 + 3,
+                2 + 3,
+                2 + 3,
+                2 + 8 + 10,
+                10 + 5 + 5
+            };
+
+            int result = game.Result(input);
+            Assert.Equal(expected.Sum(), result);
+
+        }
+
+        public void parseOneFrame()
+        {
+            var game = new Game();
+            Frame result = game.Parse("X");
+            Assert.Equal(result, new Frame(10,0));
+        }
+        public void parseOneFrame1()
+        {
+            var game = new Game();
+            Frame result = game.Parse("9-");
+            Assert.Equal(result, new Frame(9, 0));
+        }
+        public void parseOneFrame2()
+        {
+            var game = new Game();
+            Frame result = game.Parse("--");
+            Assert.Equal(result, new Frame(0, 0));
+        }
+        public void parseOneFrame3()
+        {
+            var game = new Game();
+            Frame result = game.Parse("-/");
+            Assert.Equal(result, new Frame(0, 10));
+        }
+        public void parseOneFrame4()
+        {
+            var game = new Game();
+            Frame result = game.Parse("12");
+            Assert.Equal(result, new Frame(1, 2));
         }
     
     }
