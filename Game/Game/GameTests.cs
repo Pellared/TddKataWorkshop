@@ -45,7 +45,5 @@ namespace Game
             int result = game.Result2(new List<Frame>() {  new Frame(1,1), new Frame(1,3) });
             Assert.Equal(6, result);
         }
-
-
     }
 }

@@ -63,7 +63,13 @@ namespace Game
 
         public int Result2(List<Frame> frames)
         {
-            throw new System.NotImplementedException();
+            var sum = 0;
+            foreach (var item in frames)
+            {
+                
+            }
+
+            return sum;
         }
     }
 
@@ -81,5 +87,21 @@ namespace Game
             this.p2 = p2;
         }
 
+        public int Sum()
+        {
+            return p1 + p2;
+        }
+
+        public bool IsPare()
+        {
+            if (p1 + p2 == 10) return true;
+            return false;
+        }
+
+        public bool IsStrike()
+        {
+            if (p1 == 10) return true;
+            return false;
+        }
     }
 }
