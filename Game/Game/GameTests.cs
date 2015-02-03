@@ -90,30 +90,35 @@ namespace Game
 
         }
 
+        [Fact]
         public void parseOneFrame()
         {
             var game = new Game();
             Frame result = game.Parse("X");
             Assert.Equal(result, new Frame(10,0));
         }
+        [Fact]
         public void parseOneFrame1()
         {
             var game = new Game();
             Frame result = game.Parse("9-");
             Assert.Equal(result, new Frame(9, 0));
         }
+        [Fact]
         public void parseOneFrame2()
         {
             var game = new Game();
             Frame result = game.Parse("--");
             Assert.Equal(result, new Frame(0, 0));
         }
+        [Fact]
         public void parseOneFrame3()
         {
             var game = new Game();
             Frame result = game.Parse("-/");
             Assert.Equal(result, new Frame(0, 10));
         }
+        [Fact]
         public void parseOneFrame4()
         {
             var game = new Game();
