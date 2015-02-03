@@ -18,7 +18,7 @@ namespace Game
         public void check_result_no_strice_no_spare()
         {
             var game = new Game();
-            int result = game.Result(new []{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1});
+            int result = game.Result(new List<int>(){1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1});
             Assert.Equal(20, result);
         }
 

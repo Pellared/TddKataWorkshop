@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Game
 {
@@ -10,9 +11,9 @@ namespace Game
             return first + second;
         }
 
-        public int Result(int[] ints)
+        public int Result(IEnumerable<int> rolls)
         {
-            return ints.Sum();
+            return rolls.Sum();
         }
     }
 
