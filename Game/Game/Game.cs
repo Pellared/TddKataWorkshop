@@ -15,7 +15,26 @@ namespace Game
             int result = 0;
             for (int i = 0; i < frames.Count; i++)
             {
-                result += ((i > 0 && frames[i - 1].isSpare())) ? frames[i].sum() + frames[i].firstPool : frames[i].sum();
+                if (i > 0 && frames[i - 1].isStrice())
+                {
+                    if (frames[i].isStrice())
+                    {
+                        result += frames[i].sum() + 10 + frames[i+1].firstPool;
+                    }
+                    else
+                    {
+                        result += frames[i].sum() + frames[i].firstPool + frames[i].secondPool;
+                    }
+                }
+                else if (i > 0 && frames[i - 1].isSpare())
+                {
+                    result += frames[i].sum() + frames[i].firstPool;
+                }
+                else
+                {
+                    result += frames[i].sum();
+                }
+               
             }
             return result;
 
