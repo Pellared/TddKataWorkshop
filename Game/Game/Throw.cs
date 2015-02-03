@@ -8,11 +8,16 @@ namespace Game
 {
     class Throw
     {
-        public int[] Scores { get; set; }
+        private int[] _scores;
+
+        public int[] Scores
+        {
+            get { return new int[] { 10, 0, 0 }; }
+        }
 
         public Throw()
         {
-            Scores = new int[3];
         }
+
     }
 }

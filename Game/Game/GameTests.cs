@@ -1,4 +1,5 @@
 ﻿using Xunit;
+using System.Linq;
 
 namespace Game
 {
@@ -13,9 +14,11 @@ namespace Game
         }
 
         [Fact]
-        public void CheckThrow()
+        public void Throw_is_a_strike()
         {
-                 
+            var _throw = new Throw();
+            Assert.Equal(_throw.Scores, new int[] {10,0,0});
         }
+
     }
 }
