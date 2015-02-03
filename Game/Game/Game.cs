@@ -14,18 +14,25 @@ namespace Game
         {
             int result = 0;
 
-            foreach (var frame in frames)
+            var framesArray = frames.ToArray();
+            for (int i = 0; i < framesArray .Length ; i++)
             {
-                result += frame.sum();
+                var bonus = 0;
+                if (i > 0 && framesArray[i - 1].isSpare())
+                {
+                    bonus = framesArray[i].firstPool;
+                }
+                result += framesArray[i].sum() + bonus;
             }
             return result;
+
         }
     }
 
     public class Frame
     {
-        private int firstPool;
-        private int secondPool;
+        public  int firstPool;
+        public  int secondPool;
 
         public Frame(int i, int y)
         {
