@@ -11,24 +11,24 @@ namespace Game
             return first + second;
         }
 
-       
-
         public int Result(IList<int> rolls)
         {
-            for (int i = 0; i < rolls.Count(); i++)
+            AddSpareBonus(rolls);
+            return rolls.Sum();
+        }
+
+        private void AddSpareBonus(IList<int> rolls)
+        {
+            for (var i = 0; i < rolls.Count(); i++)
             {
-                if (i >0 && i%2 == 0)
+                if (i > 0 && i % 2 == 0)
                 {
                     if (rolls[i - 2] + rolls[i - 1] == 10)
                     {
                         rolls[i] *= 2;
                     }
-
                 }
-
             }
-
-            return rolls.Sum();
         }
     }
 
