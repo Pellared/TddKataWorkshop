@@ -2,14 +2,23 @@
 
 namespace Game
 {
+
     public class GameTests
     {
-        [Fact]
-        public void Add_values_returns_the_sum()
+
+        [Theory]
+        [InlineDataAttribute(1, "I")]
+        [InlineDataAttribute(5, "V")]
+        [InlineDataAttribute(10, "X")]
+        [InlineDataAttribute(50, "L")]
+        [InlineDataAttribute(100, "C")]
+        [InlineDataAttribute(500, "D")]
+        [InlineDataAttribute(1000, "M")]
+        public void Should_Convert_BasicNumber_to_Roman(int input, string output)
         {
             var game = new Game();
-            int result = game.Add(2, 3);
-            Assert.Equal(5, result);
+            string result = game.ConvertToRomanNumber(input);
+            Assert.Equal(result, output);
         }
     }
 }
